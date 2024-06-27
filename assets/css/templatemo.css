@@ -120,6 +120,25 @@ p, a {font-weight: 400;}
   color: white;
   transition: .5s;
 }
+
+.news-section {
+  width: 80%; 
+  margin: 20px auto;
+}
+
+#news-container {
+  max-height: 300px; 
+  overflow-y: auto;
+}
+#news-container {
+  padding-left: 5px; /* Adjust this value based on your scrollbar width */
+}
+#news-container .row:nth-child(even) {
+  background-color: lightgray;
+}
+#news-container .col-8 {
+  text-align: left;
+}
 /* About */
 #work_banner {
   background-image: url('./../img/banner-bg-02.jpg');
