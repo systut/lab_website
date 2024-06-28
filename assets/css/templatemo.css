@@ -17,7 +17,9 @@ Table of contents
 8. Contact
 --------------------------------------------- */
 
-html {font-family: '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif!important;}
+html {
+  font-family: '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif!important;
+}
 /* Typography */
 p, a {font-weight: 400;}
 .h2 {font-size: 40px;}
