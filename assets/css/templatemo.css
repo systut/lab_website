@@ -17,21 +17,21 @@ Table of contents
 8. Contact
 --------------------------------------------- */
 
-html {font-family: 'Open Sans', sans-serif;}
+html {font-family: '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif!important;}
 /* Typography */
 p, a {font-weight: 400;}
 .h2 {font-size: 40px;}
 .h3 {font-size: 28px;}
 .light-300 {
-  font-family: 'Open Sans', sans-serif !important;
+  font-family: '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif!important;
   font-weight: 300;
 }
 .regular-400 {
-  font-family: 'Open Sans', sans-serif !important;
+  font-family: '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif!important;
   font-weight: 400;
 }
 .semi-bold-600 {
-  font-family: 'Open Sans', sans-serif !important;
+  font-family: '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif!important;
   font-weight: 600;
 }
 .typo-space-line::after,
