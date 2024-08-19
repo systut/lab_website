@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 "博士１年 / Doctor 1st year": ["MUHAMMAD HAZIQ BIN NOOR AKASHAH", "DINH NGOC DUC"]
             },
             "masters": {
-                "修士２年 / Master 2nd year": ["高尾　直人", "後藤　偲月", "冨士原　直人", "中尾　拓真", "板垣　光晟", "生嶋　玄明", "CAREY SINAGA", "NGUYEN VAN TAI", "HOANG XUAN THANG"],
-                "修士１年 / Master 1st year": ["山本　大輝", "平原　凜", "石河　大", "小川　永遠", "BURENTEGSH ENKHBAYASGALAN", "DONIDDORJ BAYANJARGAL", "HOANG THO THUYEN", "NGUYEN HAI PHONG", "DANG BA LOC"]
+                "修士２年 / Master 2nd year": ["高尾　直人", "後藤　偲月", "冨士原　直人", "中尾　拓真", "板垣　光晟", "生嶋　玄明", "CAREY SINAGA", "NGUYEN VAN TAI", "HOANG XUAN THANG", "KHEMAKHEM ISKANDAR"],
+                "修士１年 / Master 1st year": ["山本　大輝", "平原　凜", "石河　大", "小川　永遠", "BURENTEGSH ENKHBAYASGALAN", "DONIDDORJ BAYANJARGAL", "HOANG THO THUYEN", "NGUYEN HAI PHONG", "DANG BA LOC", "DANATAROVA OGULNUR"]
             },
             "bachelors": {
                 "学部４年 / Bachelor 4th year": ["石原　拓人", "糸川　陽希", "馬渡　大明", "村上　和音", "小松　脩征", "木田　博貴", "利根川　涼", "ANDY WILLIAM"]
