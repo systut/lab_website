@@ -211,3 +211,9 @@ footer a.text-light:hover {
   color: #bfbfbf !important;
   transition-duration: 0.15s;
 }
+.paragraph-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
