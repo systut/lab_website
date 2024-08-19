@@ -3,53 +3,50 @@ document.addEventListener("DOMContentLoaded", function() {
         "facultyStaff": {
             "professors": [
                 {
-                    "name": "Dr. Alice Johnson",
-                    "lastEducation": "Ph.D. in Molecular Biology, Harvard University",
-                    "major": "Molecular Biology",
-                    "researchMapLink": "http://example.com/alice_johnson",
-                    "image": "alice_johnson.jpg"
+                    "name": "内山　直樹",
+                    "lastEducation": "Ph.D. in Mechanical Engineering, Tokyo Metropolitan University",
+                    "researchMapLink": "https://researchmap.jp/n_u",
+                    "image": "https://via.placeholder.com/150"
                 },
                 {
-                    "name": "Dr. Bob Smith",
-                    "lastEducation": "Ph.D. in Genetics, Stanford University",
-                    "major": "Genetics",
-                    "researchMapLink": "http://example.com/bob_smith",
-                    "image": "bob_smith.jpg"
+                    "name": "高橋　淳二",
+                    "lastEducation": "Ph.D. in ...",
+                    "researchMapLink": "https://researchmap.jp/jtakahashi",
+                    "image": "https://via.placeholder.com/150"
                 },
                 {
-                    "name": "Dr. Carol Davis",
-                    "lastEducation": "Ph.D. in Biochemistry, MIT",
-                    "major": "Biochemistry",
-                    "researchMapLink": "http://example.com/carol_davis",
-                    "image": "carol_davis.jpg"
+                    "name": "堀尾　亮介",
+                    "lastEducation": "Ph.D. in Mechanical Engineering, Toyohashi University of Technology",
+                    "researchMapLink": "https://researchmap.jp/r_h",
+                    "image": "https://via.placeholder.com/150"
                 }
             ],
+            "visiting_professors": [
+                "寺内　謙一",
+                "中山　浩樹"
+            ],
             "researchers": [
-                "Researcher 1",
-                "Researcher 2",
-                "Researcher 3"
+                "百濟　和文",
+                "Abedelrahiem Farrage",
+                "Mathew Renny Msukwa"
             ],
             "secretaries": [
-                "Jane Doe",
-                "John Doe"
+                "小嶋　有紀"
             ]
         },
         "members": {
-            "doctors": [
-                "Doctor 1",
-                "Doctor 2",
-                "Doctor 3"
-            ],
-            "masters": [
-                "Master 1",
-                "Master 2",
-                "Master 3"
-            ],
-            "bachelors": [
-                "Bachelor 1",
-                "Bachelor 2",
-                "Bachelor 3"
-            ]
+            "doctors": {
+                "博士３年 / Doctor 3nd year": ["佐藤　隆史", "舟本　公路", "HARYSON JOHANES NYOBUYA"],
+                "博士２年 / Doctor 2nd year": ["百濟　和文", "NUR AZIZAH AMIR", "TRAN VIET THANH"],
+                "博士１年 / Doctor 1st year": ["MUHAMMAD HAZIQ BIN NOOR AKASHAH", "DINH NGOC DUC"]
+            },
+            "masters": {
+                "修士２年 / Master 2nd year": ["高尾　直人", "後藤　偲月", "冨士原　直人", "中尾　拓真", "板垣　光晟", "生嶋　玄明", "CAREY SINAGA", "NGUYEN VAN TAI", "HOANG XUAN THANG"],
+                "修士１年 / Master 1st year": ["山本　大輝", "平原　凜", "石河　大", "小川　永遠", "BURENTEGSH ENKHBAYASGALAN", "DONIDDORJ BAYANJARGAL", "HOANG THO THUYEN", "NGUYEN HAI PHONG", "DANG BA LOC"]
+            },
+            "bachelors": {
+                "学部４年 / Bachelor 4th year": ["石原　拓人", "糸川　陽希", "馬渡　大明", "村上　和音", "小松　脩征", "木田　博貴", "利根川　涼", "ANDY WILLIAM"]
+            }
         }
     };
 
@@ -57,28 +54,35 @@ document.addEventListener("DOMContentLoaded", function() {
     const professorsDiv = document.getElementById('professors');
     data.facultyStaff.professors.forEach(professor => {
         const profDiv = document.createElement('div');
-        profDiv.style.display = 'flex';
-        profDiv.style.marginBottom = '20px';
+        profDiv.className = 'd-flex mb-3 align-items-center';
 
         const img = document.createElement('img');
         img.src = professor.image;
         img.alt = professor.name;
-        img.style.width = '150px';
-        img.style.height = 'auto';
-        img.style.marginRight = '20px';
+        img.className = 'rounded-circle me-3';
+        img.style.width = '100px';
 
         const descDiv = document.createElement('div');
         descDiv.innerHTML = `
-            <p>${professor.name}</p>
-            <p>${professor.lastEducation}</p>
-            <p>${professor.major}</p>
-            <p><strong>Research Map</strong> <a href="${professor.researchMapLink}" target="_blank">${professor.researchMapLink}</a></p>
+            <strong>${professor.name}</strong><br>
+            ${professor.lastEducation}<br>
+            <a href="${professor.researchMapLink}" target="_blank">Research Map</a>
         `;
 
         profDiv.appendChild(img);
         profDiv.appendChild(descDiv);
         professorsDiv.appendChild(profDiv);
     });
+
+    const visitingProfessorsDiv = document.getElementById('visiting_professors');
+    const visitingProfessorssList = document.createElement('ul');
+    data.facultyStaff.visiting_professors.forEach(visiting_professors => {
+        const li = document.createElement('li');
+        li.textContent = visiting_professors;
+        visitingProfessorssList.appendChild(li);
+    });
+    visitingProfessorsDiv.innerHTML = '<h3>客員教授 / Visiting Professors</h3>';
+    visitingProfessorsDiv.appendChild(visitingProfessorssList);
 
     const researchersDiv = document.getElementById('researchers');
     const researchersList = document.createElement('ul');
@@ -87,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
         li.textContent = researcher;
         researchersList.appendChild(li);
     });
-    researchersDiv.innerHTML = '<h3>研究員 /Researcher</h3>';
+    researchersDiv.innerHTML = '<h3>研究員 / Researcher</h3>';
     researchersDiv.appendChild(researchersList);
 
     const secretariesDiv = document.getElementById('secretaries');
@@ -97,37 +101,53 @@ document.addEventListener("DOMContentLoaded", function() {
         li.textContent = secretary;
         secretariesList.appendChild(li);
     });
-    secretariesDiv.innerHTML = '<h3>事務補佐・技術補佐員 /Secretary</h3>';
+    secretariesDiv.innerHTML = '<h3>事務補佐・技術補佐員 / Secretary</h3>';
     secretariesDiv.appendChild(secretariesList);
 
     // Members
     const doctorsDiv = document.getElementById('doctors');
-    const doctorsList = document.createElement('ul');
-    data.members.doctors.forEach(doctor => {
-        const li = document.createElement('li');
-        li.textContent = doctor;
-        doctorsList.appendChild(li);
+    Object.keys(data.members.doctors).forEach(level => {
+        const section = document.createElement('div');
+        section.innerHTML = `<h4>${level}</h4>`;
+        const ul = document.createElement('ul');
+        data.members.doctors[level].forEach(member => {
+            const li = document.createElement('li');
+            li.textContent = member;
+            ul.appendChild(li);
+        });
+        section.appendChild(ul);
+        doctorsDiv.appendChild(section);
     });
-    doctorsDiv.innerHTML = '<h3>博士課程 /Doctor</h3>';
-    doctorsDiv.appendChild(doctorsList);
 
     const mastersDiv = document.getElementById('masters');
-    const mastersList = document.createElement('ul');
-    data.members.masters.forEach(master => {
-        const li = document.createElement('li');
-        li.textContent = master;
-        mastersList.appendChild(li);
+    Object.keys(data.members.masters).forEach(level => {
+        const section = document.createElement('div');
+        section.innerHTML = `<h4>${level}</h4>`;
+        const ul = document.createElement('ul');
+        data.members.masters[level].forEach(master => {
+            const li = document.createElement('li');
+            li.textContent = master;
+            ul.appendChild(li);
+        });
+        section.appendChild(ul);
+        mastersDiv.appendChild(section);
     });
-    mastersDiv.innerHTML = '<h3>修士課程 /Master course</h3>';
-    mastersDiv.appendChild(mastersList);
 
     const bachelorsDiv = document.getElementById('bachelors');
-    const bachelorsList = document.createElement('ul');
-    data.members.bachelors.forEach(bachelor => {
-        const li = document.createElement('li');
-        li.textContent = bachelor;
-        bachelorsList.appendChild(li);
-    });
-    bachelorsDiv.innerHTML = '<h3>学部生 /Bachelor</h3>';
-    bachelorsDiv.appendChild(bachelorsList);
+    if (Object.keys(data.members.bachelors).length > 0) {
+        Object.keys(data.members.bachelors).forEach(level => {
+            const section = document.createElement('div');
+            section.innerHTML = `<h4>${level}</h4>`;
+            const ul = document.createElement('ul');
+            data.members.bachelors[level].forEach(bachelor => {
+                const li = document.createElement('li');
+                li.textContent = bachelor;
+                ul.appendChild(li);
+            });
+            section.appendChild(ul);
+            bachelorsDiv.appendChild(section);
+        });
+    } else {
+        bachelorsDiv.innerHTML = "<p>No bachelor members available.</p>";
+    }
 });
